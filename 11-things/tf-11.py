@@ -42,6 +42,7 @@ class StopWordManager(TFExercise):
     def info(self):
         return super(StopWordManager, self).info() + ": My major data structure is a " + self._stop_words.__class__.__name__
 
+
 class WordFrequencyManager(TFExercise):
     """ Keeps the word frequency data """
     
