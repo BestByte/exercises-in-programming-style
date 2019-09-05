@@ -36,5 +36,30 @@ class StopWordManager():
     def info(self):
         return super(StopWordManager,self).info()+":My major data is a"+self._stop_words.__class__.__name__
 
+    
+class WordFreqManager():
+    def __init__(self):
+        self.__word_freqs={}
+
+    def increment_count(self,word):
+        if word in self.__word_freqs:
+            self.__word_freqs[word]+=1
+
+        else:
+            self.__word_freqs[word]=1
+
+    def sorted(self):
+        return  sorted(self.__word_freqs.iteritems(),key=operator.itemgetter(1),reverse=True)
+
+    
+    def info(self):
+        return super(WordFreqManager,self).info()+"my magor is "+self.__word_freqs.__class__.__name__
+
+
+def WordFreqController():
+    def __init__(self,path_to_file):
+        self._storage_maager+DataStorage(path_to_file)
+        
+
 
 
