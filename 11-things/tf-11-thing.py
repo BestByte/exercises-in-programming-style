@@ -9,4 +9,6 @@ class DataStorage():
         with open(path_to_file) as f:
             self._data=f.read()
 
-        pattern=re.compile('')
+        pattern=re.compile('[\W_]+')
+
+        self._data=pattern.sub("", self._data).lower()
