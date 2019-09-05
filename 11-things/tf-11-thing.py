@@ -20,3 +20,9 @@ class DataStorage():
     
     def info(self):
         return super(DataStorage,self).info()+":my major data is a"+self._data.__class__.__name__
+
+
+class StopWordManager():
+
+    def __init__(self):
+        with open
