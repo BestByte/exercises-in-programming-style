@@ -42,3 +42,24 @@ class StopWordManager(InfoAbstaract):
     def info(self):
         return super(StopWordManager,self).info()+" my major is a"+self._stop_words.__class__.__name__
 
+class WordFreqManager(InfoAbstaract):
+
+    def __init__(self):
+       self._word_freqs={}
+
+
+    def increment_count(self, word):
+        if word in self.__word_freqs:
+            self.__word_freqs[word] += 1
+
+        else:
+            self.__word_freqs[word] = 1
+
+    def sorted(self):
+        return  sorted(self.__word_freqs.iteritems(),key=operator.itemgetter(1),reverse=True)
+
+    
+    def info(self):
+        return super(WordFreqManager,self).info()+"my magor is "+self.__word_freqs.__class__.__name__
+
+     
