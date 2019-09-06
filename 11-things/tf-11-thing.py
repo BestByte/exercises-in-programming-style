@@ -58,8 +58,20 @@ class WordFreqManager():
 
 def WordFreqController():
     def __init__(self,path_to_file):
-        self._storage_maager+DataStorage(path_to_file)
-        
+        self._storage_maager=DataStorage(path_to_file)
+        self._stop_word_manager=StopWordManager()
+        self._word_freq_manager=WordFreqController()
+
+    def run(self):
+        for w in self._storage_manager.words():
+            if not self._stop_word_manager.is_stop_word(w):
+                self._word_freq_manger.increment_count(w)
 
 
+        word_freqs=self._word_freq_manager.setworldcoordinates()
 
+        for (w,c) in word_freqs[0:25]:
+            print(w,"-",c)
+
+
+WordFreqController(sys.argv[1]).run()
