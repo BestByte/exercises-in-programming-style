@@ -44,7 +44,9 @@ class StopWordManager(InfoAbstaract):
         return super(StopWordManager,self).info()+" my major is a"+self._stop_words.__class__.__name__
 
 class WordFreqManager(InfoAbstaract):
-
+    '''
+    词汇统计
+    '''
     def __init__(self):
        self._word_freqs={}
 
