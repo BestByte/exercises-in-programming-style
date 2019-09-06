@@ -3,9 +3,9 @@ import sys,re,operator,string
 
 class DataStorage():
     '''
-
+    对于文件内容建模
     '''
-    def __init__(self,path_to_file:string):
+    def __init__(self,path_to_file):
         with open(path_to_file) as f:
             self._data=f.read()
 
