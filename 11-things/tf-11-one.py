@@ -1,7 +1,8 @@
 import sys,re,operator,string
 
+from abc import ABCMeta
 class InfoAbstaract():
-    __metaclass__=OOP
+    __metaclass__=ABCMeta
 
     def info(self):
         return self.__class__.__name__
@@ -63,7 +64,7 @@ class WordFreqManager(InfoAbstaract):
         return super(WordFreqManager,self).info()+"my magor is "+self.__word_freqs.__class__.__name__
 
 
-class WordFrequencyController(TFExercise):
+class WordFrequencyController(InfoAbstaract):
     def __init__(self, path_to_file):
         self._storage_manager = DataStore(path_to_file)
         self._stop_word_manager = StopWordManager()
